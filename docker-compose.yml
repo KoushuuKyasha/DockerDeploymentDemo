@@ -1,0 +1,10 @@
+version: "3.4"
+
+services:
+  static_website:
+    image: dockerdeploymentdemo/static_website:${TAG:-latest}
+    ports:
+      - "5010:80"
+    build:
+      context: StaticWebsite/
+      dockerfile: Dockerfile
