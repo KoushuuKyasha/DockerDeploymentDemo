@@ -7,6 +7,7 @@ before_script:
   - echo "{\"insecure-registries\":[\"${DOCKER_SERVER}\"]}" > daemon.json
   - sudo cp daemon.json /etc/docker/daemon.json
   - sudo service docker start
+  - sudo apt-get install sshpass
 script:
   - docker-compose build
   - echo "${DOCKER_PASSWORD}" | docker login ${DOCKER_SERVER} --username "${DOCKER_USERNAME}" --password-stdin  
