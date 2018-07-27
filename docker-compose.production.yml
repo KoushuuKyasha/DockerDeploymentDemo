@@ -1,7 +1,7 @@
-version: "3.4"
+version: "2"
 
 services:
   static_website: 
-    image: ${DOCKER_SERVER}/dockerdeploymentdemo/static_website:${TAG:-latest}
+    image: ${DOCKER_SERVER}/dockerdeploymentdemo/static_website:latest
     ports: 
       - 5010:80
