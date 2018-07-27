@@ -21,5 +21,5 @@ after_script:
   - sshpass -p ${DEPLOY_PASSWORD} ssh ${DEPLOY_USERNAME}@${DEPLOY_SERVER} 'mkdir ~/docker_deployment_demo/'
   - sshpass -p ${DEPLOY_PASSWORD} scp -o stricthostkeychecking=no ./deploy_script.sh ${DEPLOY_USERNAME}@${DEPLOY_SERVER}:~/docker_deployment_demo/deploy_script.sh
   - sshpass -p ${DEPLOY_PASSWORD} scp -o stricthostkeychecking=no ./docker-compose.production.yml ${DEPLOY_USERNAME}@${DEPLOY_SERVER}:~/docker_deployment_demo/docker-compose.production.yml
-  - sshpass -p ${DEPLOY_PASSWORD} ssh ${DEPLOY_USERNAME}@${DEPLOY_SERVER} 'cd docker_deployment_demo && nohup ./deploy_script.sh &'
+  - sshpass -p ${DEPLOY_PASSWORD} ssh ${DEPLOY_USERNAME}@${DEPLOY_SERVER} 'cd docker_deployment_demo && ./deploy_script.sh '
   
